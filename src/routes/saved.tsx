@@ -5,5 +5,14 @@ export const Route = createFileRoute('/saved')({
 })
 
 function Saved() {
-  return <div className="p-2">Hello from Saved!</div>
+  return (
+    <div>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+    </div>
+  )
 }

@@ -6,8 +6,118 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   return (
-    <div className="p-2">
-      <h3>Welcome Home!</h3>
+    <div>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
+      <p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+      </p>
     </div>
   )
 }

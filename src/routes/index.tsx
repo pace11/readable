@@ -3,6 +3,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
@@ -18,17 +19,29 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { SearchIcon } from 'lucide-react'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
+import {
+  SearchIcon,
+  ArrowUpRightIcon,
+  CalendarIcon,
+  BookmarkIcon,
+} from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Badge } from '@/components/ui/badge'
 
 export const Route = createFileRoute('/')({
   component: Index,
 })
 
 const formSearch = z.object({
-  search: z.string().min(3, 'Search must be at least 3 characters long'),
+  search: z.string().min(3, 'Search must be at least 3 characters'),
 })
 
 type formType = z.infer<typeof formSearch>
@@ -53,9 +66,9 @@ const extractKeywords = (docs: any[]) => {
   const keywordsMap = new Map<string, Set<string>>()
 
   docs.forEach((doc) => {
-    doc.keywords.forEach((kw: { name: string; value: string }) => {
-      const key = kw.name
-      const val = kw.value
+    doc.keywords.forEach((keywords: { name: string; value: string }) => {
+      const key = keywords.name
+      const val = keywords.value
       if (!keywordsMap.has(key)) {
         keywordsMap.set(key, new Set())
       }
@@ -64,7 +77,10 @@ const extractKeywords = (docs: any[]) => {
   })
 
   return Object.fromEntries(
-    Array.from(keywordsMap.entries()).map(([k, v]) => [k, Array.from(v)]),
+    Array.from(keywordsMap.entries()).map(([key, value]) => [
+      key,
+      Array.from(value),
+    ]),
   )
 }
 
@@ -187,19 +203,67 @@ function Index() {
 
       {data &&
         data.docs.length > 0 &&
-        data.docs.map((doc: any) => (
-          <Card key={doc._id}>
-            <CardHeader>
-              <CardTitle>{doc.headline.main}</CardTitle>
-              <CardDescription>{doc.byline?.original}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>{doc.snippet}</p>
-              <a href={doc.web_url} target="_blank" rel="noopener noreferrer">
-                Read more
-              </a>
-            </CardContent>
-          </Card>
+        data.docs.map((doc: any, index: number) => (
+          <motion.div
+            key={doc._id}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: 'backIn',
+              delay: index * 0.1,
+            }}
+          >
+            <Card key={doc._id}>
+              <CardHeader>
+                <CardTitle>{doc.headline.main}</CardTitle>
+                <CardDescription>
+                  {doc.byline?.original}{' '}
+                  <Badge variant="outline">
+                    <CalendarIcon />
+                    {new Date(doc.pub_date).toLocaleDateString('id-ID', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </Badge>
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>{doc.snippet}</p>
+              </CardContent>
+              <CardFooter className="flex gap-2">
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  className="hover:cursor-pointer"
+                >
+                  <BookmarkIcon />
+                </Button>
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <a
+                      href={doc.web_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button size="sm" className="hover:cursor-pointer">
+                        Read more
+                        <ArrowUpRightIcon />
+                      </Button>
+                    </a>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-100 h-80">
+                    <iframe
+                      className="w-full h-full"
+                      src={doc.web_url}
+                      title={doc.headline.main}
+                    />
+                  </HoverCardContent>
+                </HoverCard>
+              </CardFooter>
+            </Card>
+          </motion.div>
         ))}
 
       {!isLoading && data?.docs.length === 0 && (

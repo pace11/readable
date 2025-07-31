@@ -20,7 +20,6 @@ export const Route = createRootRoute({
                 asChild
                 className={navigationMenuTriggerStyle()}
               >
-                {/* <Link to="/" className="[&.active]:font-bold"> */}
                 <Link to="/" className="flex-row items-center gap-2">
                   <NewspaperIcon color="#22c55e" />
                   <span className="font-bold">READable</span>

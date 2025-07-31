@@ -5,5 +5,5 @@ export const HomeContainer = () => {
       <p>Welcome to the home page!</p>
       <p>This is where you can find the latest updates and news.</p>
     </div>
-  );
+  )
 }

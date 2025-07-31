@@ -14,8 +14,10 @@ import {
 } from '@/components/ui/hover-card'
 import { ArrowUpRightIcon, CalendarIcon, BookmarkIcon } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import { useBookmarkStore } from '@/store/useBookmarkStore'
 
-type CardNewsProps = {
+export type CardNewsProps = {
+  id: string
   title: string
   author: string | null
   publishedDate: string
@@ -24,12 +26,16 @@ type CardNewsProps = {
 }
 
 export default function CardNews({
+  id,
   title,
   author,
   publishedDate,
   shortDescription,
   webUrl,
 }: CardNewsProps) {
+  const { addBookmark, removeBookmark, isBookmarked } = useBookmarkStore()
+  const bookmarked = isBookmarked(id)
+
   return (
     <Card>
       <CardHeader>
@@ -50,8 +56,24 @@ export default function CardNews({
         <p className="text-sm">{shortDescription}</p>
       </CardContent>
       <CardFooter className="flex gap-2">
-        <Button size="sm" variant="secondary" className="hover:cursor-pointer">
-          <BookmarkIcon />
+        <Button
+          size="sm"
+          variant="secondary"
+          className="hover:cursor-pointer"
+          onClick={() =>
+            bookmarked
+              ? removeBookmark(id)
+              : addBookmark({
+                  id,
+                  title,
+                  author,
+                  publishedDate,
+                  shortDescription,
+                  webUrl,
+                })
+          }
+        >
+          <BookmarkIcon fill={bookmarked ? 'currentColor' : 'none'} />
         </Button>
         <HoverCard>
           <HoverCardTrigger asChild>

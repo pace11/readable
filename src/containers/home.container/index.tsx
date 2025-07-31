@@ -87,7 +87,7 @@ export default function HomeContainer() {
             }}
           >
             <CardNews
-              key={doc._id}
+              id={doc._id}
               title={doc.headline.main}
               author={doc.byline?.original || null}
               publishedDate={doc.pub_date}

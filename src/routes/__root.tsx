@@ -22,7 +22,7 @@ export const Route = createRootRoute({
               >
                 <Link to="/" className="flex-row items-center gap-2">
                   <NewspaperIcon color="#22c55e" />
-                  <span className="font-bold">READable</span>
+                  <span className="font-bold">Home</span>
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>

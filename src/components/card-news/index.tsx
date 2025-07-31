@@ -47,7 +47,7 @@ export default function CardNews({
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>{shortDescription}</p>
+        <p className="text-sm">{shortDescription}</p>
       </CardContent>
       <CardFooter className="flex gap-2">
         <Button size="sm" variant="secondary" className="hover:cursor-pointer">

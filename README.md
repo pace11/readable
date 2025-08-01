@@ -50,7 +50,7 @@
 - Branching Strategy with Git Flow
 - First, Create new branch with prefix `feature_*` example `feature_bookmark`
 - Open Pull Request and target merging branch is `master`
-- Put the title and description and then please wait until finished reviewing
+- Put the title and description and then please wait until reviewing and runner testing finished
 - Reviewing is finished, Merging `_feature_*` branch into `master` and deployment flow is ready to go 🏃
 - Flow Deployment 👇👇👇
 

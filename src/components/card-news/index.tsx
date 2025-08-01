@@ -77,7 +77,12 @@ export default function CardNews({
         </Button>
         <HoverCard>
           <HoverCardTrigger asChild>
-            <a href={webUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              data-testid="read-more-link"
+              href={webUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="sm" className="hover:cursor-pointer">
                 Read more
                 <ArrowUpRightIcon />
